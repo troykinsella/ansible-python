@@ -1,0 +1,4 @@
+---
+python_packages: []
+python_legacy_support: no
+python_pip_executable: "/usr/bin/pip{{ 2 if python_legacy_support else 3 }}"
