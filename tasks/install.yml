@@ -24,19 +24,19 @@
     dest: /tmp/get-pip.py
     mode: 0755
     force: yes
-  when: not pip.stat.exists
+  when: "{{ not pip.stat.exists }}"
   tags:
     - python
 
 - name: pip | install
   shell: /tmp/get-pip.py
-  when: not pip.stat.exists
+  when: "{{ not pip.stat.exists }}"
   tags:
     - python
 
 - name: pip | update
   shell: "{{ python_pip_executable }} install -U pip"
-  when: pip.stat.exists
+  when: "{{ pip.stat.exists }}"
   tags:
     - python
 
@@ -45,7 +45,7 @@
     executable: "{{ python_pip_executable }}"
     state: latest
     name: "{{ item }}"
-  with_items: python_packages
-  when: python_packages
+  with_items: "{{ python_packages }}"
+  when: "{{ python_packages }}"
   tags:
     - python
