@@ -1,14 +1,16 @@
 troykinsella.python
 ===================
 
-An ansible role to install python, pip, and python packages.
+An ansible role to install python3, pip, and python packages.
 
 Role Variables
 --------------
 
-* python_packages: (array) List of package names. Default: [].
-* python_pip_download_url: (string) The URL at which the pip installer can be downloaded. Default: https://bootstrap.pypa.io/get-pip.py.
-* python_pip_executable: (string) Path to the pip executable.
+See `default/main.yml` for defaults.
+
+* `python_apt_packages`: Optional. List of apt packages to install.
+* `python_packages`: Optional. List of package names.
+* `python_pip_executable`: Optional. Path to the pip executable.
 
 Example Playbook
 ----------------

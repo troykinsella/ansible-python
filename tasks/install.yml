@@ -4,6 +4,11 @@
     name: "{{ python_apt_packages }}"
     state: latest
 
+- name: apt | install pip task prerequisites
+  apt:
+    name: python3-setuptools
+    state: latest
+
 - name: pip | install packages
   pip:
     executable: "{{ python_pip_executable }}"
