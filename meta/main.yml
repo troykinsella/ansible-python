@@ -12,6 +12,9 @@ galaxy_info:
     - trusty
     - xenial
     - bionic
+  - name: Raspbian
+    versions:
+    - stretch
   galaxy_tags:
   - packaging
   - python
